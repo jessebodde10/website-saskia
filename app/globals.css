@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: "Inter", system-ui, sans-serif;
+    --font-fraunces: "Fraunces", Georgia, serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Respecteer voorkeur voor minder beweging (o.a. de zwevende hero-animatie) */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply bg-cream text-ink antialiased;
+    font-feature-settings: "kern", "liga";
+  }
+
+  ::selection {
+    @apply bg-sage-200 text-ink;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif tracking-tight text-ink;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium
+      transition-all duration-300 focus-visible:outline-none focus-visible:ring-2
+      focus-visible:ring-sage-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
+  }
+
+  .btn-primary {
+    @apply btn bg-sage-600 text-cream shadow-soft hover:bg-sage-700 hover:shadow-card
+      hover:-translate-y-0.5;
+  }
+
+  .btn-accent {
+    @apply btn bg-terracotta-600 text-cream shadow-soft hover:bg-terracotta-700
+      hover:shadow-card hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply btn border border-sage-300 bg-transparent text-ink hover:border-sage-500
+      hover:bg-sage-50 hover:-translate-y-0.5;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-terracotta-500;
+  }
+
+  .card {
+    @apply rounded-4xl border border-sand-200 bg-white p-8 shadow-soft
+      transition-all duration-300 hover:-translate-y-1 hover:border-sand-300
+      hover:shadow-card sm:p-10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Organische blob-vorm voor natuurlijke accenten */
+  .blob {
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  }
+}
