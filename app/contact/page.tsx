@@ -65,7 +65,7 @@ export default function ContactPage() {
       </section>
 
       {/* Drie CTA's */}
-      <section className="container-content py-14">
+      <section className="container-content py-20 sm:py-28">
         <StaggerGroup className="grid gap-6 md:grid-cols-3">
           {ctas.map((cta) => (
             <StaggerItem key={cta.title}>
@@ -91,12 +91,17 @@ export default function ContactPage() {
       </section>
 
       {/* Formulier */}
-      <section id="formulier" className="bg-sand-50 py-16 sm:py-20">
+      <section
+        id="formulier"
+        className="border-t border-sand-200 bg-sand-50 py-20 sm:py-28"
+      >
         <div className="container-content">
           <div className="mx-auto max-w-3xl">
             <FadeIn>
               <div className="mb-8 text-center">
-                <h2 className="text-3xl sm:text-4xl">Stuur een bericht</h2>
+                <h2 className="text-3xl tracking-tightest sm:text-4xl">
+                  Stuur een bericht
+                </h2>
                 <p className="mt-3 text-ink-soft">
                   Vul het formulier in en ik neem zo snel mogelijk contact met je
                   op.

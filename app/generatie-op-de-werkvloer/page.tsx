@@ -70,89 +70,83 @@ export default function GeneratieWerkvloerPage() {
         }
       />
 
-      {/* Contentkaart */}
-      <section className="container-content py-16 sm:py-20">
-        <FadeIn>
-          <article className="overflow-hidden rounded-5xl border border-sand-200 bg-white shadow-card">
-            <div className="grid lg:grid-cols-2">
-              <div className="relative min-h-[280px] lg:min-h-full">
-                <ImageFrame
-                  src={images.trainingTeam}
-                  alt="Team in gesprek tijdens een interactieve training"
-                  rounded="rounded-none"
-                  aspect="aspect-auto"
-                  className="h-full"
-                />
+      {/* Content: de basistraining */}
+      <section className="container-content py-20 sm:py-28">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <FadeIn>
+            <ImageFrame
+              src={images.teamBreath}
+              alt="Team in gesprek tijdens een interactieve training"
+              aspect="aspect-[4/5]"
+              rounded="rounded-xl"
+            />
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <div>
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-sage-50 text-sage-600">
+                <Users />
+              </span>
+              <h2 className="mt-6 text-2xl tracking-tightest sm:text-3xl">
+                De basistraining
+              </h2>
+              <div className="mt-5 space-y-4 leading-relaxed text-ink-soft">
+                <p>
+                  Deze basistraining gaat over de verschillende generaties op de
+                  werkvloer. Medewerkers ontdekken op een luchtige en
+                  interactieve manier hoe generaties van elkaar kunnen
+                  verschillen in communicatie, samenwerken, feedback en
+                  werkhouding.
+                </p>
+                <p>
+                  De training is bedoeld als eerste bewustwording. Na de training
+                  kunnen er vraagstukken naar boven komen waar we samen verder
+                  mee aan de slag gaan en waarin we verdieping kunnen aanbrengen
+                  op specifieke vragen binnen het team.
+                </p>
               </div>
 
-              <div className="p-8 sm:p-12">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-sage-50 text-sage-600">
-                  <Users />
-                </span>
-                <h2 className="mt-6 text-2xl sm:text-3xl">
-                  De basistraining
-                </h2>
-                <div className="mt-5 space-y-4 leading-relaxed text-ink-soft">
-                  <p>
-                    Deze basistraining gaat over de verschillende generaties op
-                    de werkvloer. Medewerkers ontdekken op een luchtige en
-                    interactieve manier hoe generaties van elkaar kunnen
-                    verschillen in communicatie, samenwerken, feedback en
-                    werkhouding.
-                  </p>
-                  <p>
-                    De training is bedoeld als eerste bewustwording. Na de
-                    training kunnen er vraagstukken naar boven komen waar we
-                    samen verder mee aan de slag gaan en waarin we verdieping
-                    kunnen aanbrengen op specifieke vragen binnen het team.
-                  </p>
-                </div>
-
-                <div className="mt-8 rounded-xl border border-sand-200 bg-sand-50 p-6">
-                  <h3 className="flex items-center gap-2 text-sm font-semibold text-ink">
-                    <Clock className="h-4 w-4 text-sage-600" />
-                    Praktische informatie
-                  </h3>
-                  <dl className="mt-4 space-y-3">
-                    {praktisch.map((item) => (
-                      <div
-                        key={item.label}
-                        className="flex gap-3 text-sm sm:gap-4"
-                      >
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-sage-500" />
-                        <div>
-                          <dt className="inline font-medium text-ink">
-                            {item.label}:{" "}
-                          </dt>
-                          <dd className="inline text-ink-soft">{item.value}</dd>
-                        </div>
+              <div className="mt-8 rounded-xl border border-sand-200 bg-sand-50 p-6">
+                <h3 className="flex items-center gap-2 text-sm font-semibold text-ink">
+                  <Clock className="h-4 w-4 text-sage-600" />
+                  Praktische informatie
+                </h3>
+                <dl className="mt-4 space-y-3">
+                  {praktisch.map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex gap-3 text-sm sm:gap-4"
+                    >
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-sage-600" />
+                      <div>
+                        <dt className="inline font-medium text-ink">
+                          {item.label}:{" "}
+                        </dt>
+                        <dd className="inline text-ink-soft">{item.value}</dd>
                       </div>
-                    ))}
-                  </dl>
-                </div>
+                    </div>
+                  ))}
+                </dl>
+              </div>
 
-                <div className="mt-8">
-                  <Link
-                    href="/contact?onderwerp=werkvloer"
-                    className="btn-primary"
-                  >
-                    Vraag informatie aan
-                    <ArrowRight />
-                  </Link>
-                </div>
+              <div className="mt-8">
+                <Link href="/contact?onderwerp=werkvloer" className="btn-primary">
+                  Vraag informatie aan
+                  <ArrowRight />
+                </Link>
               </div>
             </div>
-          </article>
-        </FadeIn>
+          </FadeIn>
+        </div>
       </section>
 
       {/* Generaties in het kort */}
-      <section className="bg-sand-50 py-16 sm:py-20">
+      <section className="border-y border-sand-200 bg-sand-50 py-20 sm:py-28">
         <div className="container-content">
           <FadeIn>
             <div className="max-w-prose">
               <p className="eyebrow">In het kort</p>
-              <h2 className="mt-4 text-3xl sm:text-4xl">
+              <h2 className="mt-5 text-3xl tracking-tightest sm:text-4xl">
                 Vier generaties, één team
               </h2>
               <p className="mt-4 leading-relaxed text-ink-soft">
@@ -181,7 +175,7 @@ export default function GeneratieWerkvloerPage() {
       </section>
 
       {/* Kernpunten */}
-      <section className="container-content py-16 sm:py-20">
+      <section className="container-content py-20 sm:py-28">
         <StaggerGroup className="grid gap-6 sm:grid-cols-3">
           {[
             {

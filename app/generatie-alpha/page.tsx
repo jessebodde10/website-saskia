@@ -76,7 +76,7 @@ export default function GeneratieAlphaPage() {
       />
 
       {/* Beeld + korte duiding */}
-      <section className="container-content py-16 sm:py-20">
+      <section className="container-content py-20 sm:py-28">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
           <FadeIn>
             <div>
@@ -113,12 +113,12 @@ export default function GeneratieAlphaPage() {
       </section>
 
       {/* Kenmerken */}
-      <section className="bg-sand-50 py-16 sm:py-20">
+      <section className="border-y border-sand-200 bg-sand-50 py-20 sm:py-28">
         <div className="container-content">
           <FadeIn>
             <div className="max-w-prose">
               <p className="eyebrow">In de praktijk</p>
-              <h2 className="mt-4 text-3xl sm:text-4xl">
+              <h2 className="mt-5 text-3xl tracking-tightest sm:text-4xl">
                 Wat je terugziet op de groep en in de klas
               </h2>
             </div>
@@ -145,11 +145,11 @@ export default function GeneratieAlphaPage() {
       </section>
 
       {/* Wat betekent dit voor jou */}
-      <section className="container-content py-16 sm:py-20">
+      <section className="container-content py-20 sm:py-28">
         <FadeIn>
           <div className="max-w-prose">
             <p className="eyebrow">Wat betekent dit voor jou?</p>
-            <h2 className="mt-4 text-3xl sm:text-4xl">
+            <h2 className="mt-5 text-3xl tracking-tightest sm:text-4xl">
               Van inzicht naar dagelijkse praktijk
             </h2>
           </div>
