@@ -24,17 +24,17 @@ const siteUrl = "https://riseandconnect.nl";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Rise & Connect — Training, ademcoaching en bewustwording",
+    default: "Rise & Connect · Generaties op de werkvloer & Generatie Alpha",
     template: "%s · Rise & Connect",
   },
   description:
-    "Rise & Connect biedt interactieve trainingen over generaties op de werkvloer en ademcoaching voor volwassenen, kinderen en teams. Rust, verbinding en bewustwording voor mensen en teams.",
+    "Interactieve trainingen over generaties op de werkvloer en het thema Generatie Alpha in de praktijk. Voor teams in kinderopvang, onderwijs en zorg. Praktisch, laagdrempelig en direct toepasbaar.",
   keywords: [
-    "ademcoaching",
-    "training",
     "generaties op de werkvloer",
+    "Generatie Alpha",
+    "training",
     "teambuilding",
-    "bewustwording",
+    "samenwerking",
     "kinderopvang",
     "onderwijs",
     "zorg",
@@ -46,16 +46,16 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     url: siteUrl,
     siteName: "Rise & Connect",
-    title: "Rise & Connect — Rust, bewustwording en verbinding",
+    title: "Rise & Connect · Generaties op de werkvloer & Generatie Alpha",
     description:
-      "Interactieve trainingen over generaties op de werkvloer en ademcoaching voor mensen en teams.",
+      "Interactieve trainingen over generaties op de werkvloer en Generatie Alpha in de praktijk.",
     // og:image wordt automatisch geleverd door app/opengraph-image.tsx (echte PNG)
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rise & Connect — Rust, bewustwording en verbinding",
+    title: "Rise & Connect · Generaties op de werkvloer & Generatie Alpha",
     description:
-      "Interactieve trainingen over generaties op de werkvloer en ademcoaching voor mensen en teams.",
+      "Interactieve trainingen over generaties op de werkvloer en Generatie Alpha in de praktijk.",
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -69,20 +69,20 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Rise & Connect",
   description:
-    "Training, ademcoaching en bewustwording voor mensen en teams. Interactieve trainingen over generaties op de werkvloer en ademcoaching voor volwassenen, kinderen en teams.",
+    "Interactieve trainingen over generaties op de werkvloer en het thema Generatie Alpha in de praktijk, voor teams in kinderopvang, onderwijs en zorg.",
   url: siteUrl,
   email: "hallo@riseandconnect.nl",
   areaServed: "NL",
   founder: {
     "@type": "Person",
     name: "Saskia Bodde",
-    jobTitle: "Trainer & ademcoach",
+    jobTitle: "Trainer generaties op de werkvloer",
   },
   knowsAbout: [
-    "Ademcoaching",
     "Generaties op de werkvloer",
+    "Generatie Alpha",
     "Teamontwikkeling",
-    "Bewustwording",
+    "Samenwerking",
   ],
 };
 

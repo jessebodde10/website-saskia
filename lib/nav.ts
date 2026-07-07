@@ -5,9 +5,8 @@ export type NavItem = {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Trainingen", href: "/trainingen" },
-  { label: "Ademcoaching", href: "/ademcoaching" },
-  { label: "Over mij", href: "/over-mij" },
+  { label: "Generatie op de werkvloer", href: "/generatie-op-de-werkvloer" },
+  { label: "Generatie Alpha", href: "/generatie-alpha" },
   { label: "Contact", href: "/contact" },
 ];
 

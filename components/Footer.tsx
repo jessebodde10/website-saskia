@@ -23,7 +23,8 @@ export default function Footer() {
             </span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-            Training, ademcoaching en bewustwording voor mensen en teams.
+            Trainingen over generaties op de werkvloer en Generatie Alpha in de
+            praktijk.
           </p>
         </div>
 

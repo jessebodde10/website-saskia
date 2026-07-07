@@ -8,9 +8,8 @@ import { contactEmail } from "@/lib/nav";
 
 const subjects = [
   { value: "", label: "Kies een onderwerp" },
-  { value: "training", label: "Training — Generaties op de werkvloer" },
-  { value: "ademcoaching", label: "Ademcoaching" },
-  { value: "mini-retreat", label: "Mini-retreat" },
+  { value: "werkvloer", label: "Training: Generatie op de werkvloer" },
+  { value: "alpha", label: "Generatie Alpha in de praktijk" },
   { value: "kennismaking", label: "Kennismaking" },
   { value: "anders", label: "Iets anders" },
 ];
@@ -42,7 +41,7 @@ export default function ContactForm() {
       `${form.get("bericht")}`,
     ].join("\n");
     const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(
-      "Aanvraag via website — " + (form.get("onderwerp") || "algemeen"),
+      "Aanvraag via website: " + (form.get("onderwerp") || "algemeen"),
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
     setSent(true);

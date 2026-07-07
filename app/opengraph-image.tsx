@@ -1,10 +1,10 @@
 import { ImageResponse } from "next/og";
 
-// Genereert een echte PNG (1200×630) voor social sharing — werkt in Facebook,
+// Genereert een echte PNG (1200×630) voor social sharing, werkt in Facebook,
 // LinkedIn, WhatsApp en X, in tegenstelling tot een SVG.
 export const runtime = "edge";
 export const alt =
-  "Rise & Connect — Rust, bewustwording en verbinding voor mensen en teams";
+  "Rise & Connect · Generaties op de werkvloer & Generatie Alpha in de praktijk";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -72,9 +72,9 @@ export default function OpengraphImage() {
             maxWidth: 900,
           }}
         >
-          <span>Rust, bewustwording en</span>
-          <span>verbinding voor mensen</span>
-          <span style={{ color: "#4A5B44" }}>en teams</span>
+          <span>Generaties op de werkvloer</span>
+          <span style={{ color: "#4A5B44" }}>& Generatie Alpha</span>
+          <span>in de praktijk</span>
         </div>
 
         {/* Onderregel */}
@@ -86,7 +86,7 @@ export default function OpengraphImage() {
             textTransform: "uppercase",
           }}
         >
-          Training · Ademcoaching · Bewustwording
+          Kinderopvang · Onderwijs · Zorg · Teams
         </div>
       </div>
     ),

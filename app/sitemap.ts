@@ -3,7 +3,12 @@ import type { MetadataRoute } from "next";
 const base = "https://riseandconnect.nl";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/trainingen", "/ademcoaching", "/over-mij", "/contact"];
+  const routes = [
+    "",
+    "/generatie-op-de-werkvloer",
+    "/generatie-alpha",
+    "/contact",
+  ];
   const now = new Date();
   return routes.map((path) => ({
     url: `${base}${path}`,

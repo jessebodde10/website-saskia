@@ -9,7 +9,7 @@ import { contactEmail } from "@/lib/nav";
 export const metadata: Metadata = {
   title: "Neem contact op",
   description:
-    "Wil je meer weten over een training, ademsessie of bijeenkomst voor jouw team? Neem contact op met Saskia van Rise & Connect.",
+    "Wil je meer weten over een training over generaties op de werkvloer of het thema Generatie Alpha voor jouw team? Neem contact op met Saskia Bodde.",
 };
 
 const ctas = [
@@ -29,8 +29,8 @@ const ctas = [
   },
   {
     title: "Vraag informatie aan",
-    text: "Ontvang meer informatie over trainingen of ademcoaching.",
-    href: "/contact?onderwerp=training#formulier",
+    text: "Ontvang meer informatie over de training of het thema Generatie Alpha.",
+    href: "/contact?onderwerp=werkvloer#formulier",
     icon: ArrowRight,
     accent: "sage" as const,
   },
@@ -55,8 +55,8 @@ export default function ContactPage() {
             <FadeIn delay={0.08}>
               <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-soft">
                 <p>
-                  Wil je meer weten over een training, ademsessie of bijeenkomst
-                  voor jouw team?
+                  Wil je meer weten over een training over generaties op de
+                  werkvloer of het thema Generatie Alpha voor jouw team?
                 </p>
                 <p>
                   Neem gerust contact met mij op. Dan kijken we samen wat passend
