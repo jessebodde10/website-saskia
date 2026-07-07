@@ -86,7 +86,7 @@ export default function GeneratieWerkvloerPage() {
               </div>
 
               <div className="p-8 sm:p-12">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-100 text-sage-600">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-sage-50 text-sage-600">
                   <Users />
                 </span>
                 <h2 className="mt-6 text-2xl sm:text-3xl">
@@ -108,9 +108,9 @@ export default function GeneratieWerkvloerPage() {
                   </p>
                 </div>
 
-                <div className="mt-8 rounded-3xl bg-sand-50 p-6">
+                <div className="mt-8 rounded-xl border border-sand-200 bg-sand-50 p-6">
                   <h3 className="flex items-center gap-2 text-sm font-semibold text-ink">
-                    <Clock className="h-4 w-4 text-terracotta-500" />
+                    <Clock className="h-4 w-4 text-sage-600" />
                     Praktische informatie
                   </h3>
                   <dl className="mt-4 space-y-3">
@@ -168,7 +168,7 @@ export default function GeneratieWerkvloerPage() {
                 <div className="card h-full">
                   <div className="flex items-baseline justify-between gap-4">
                     <h3 className="text-lg font-medium text-ink">{g.naam}</h3>
-                    <span className="text-sm tabular-nums text-terracotta-500">
+                    <span className="text-sm tabular-nums text-sage-600">
                       {g.jaren}
                     </span>
                   </div>

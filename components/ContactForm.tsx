@@ -15,7 +15,7 @@ const subjects = [
 ];
 
 const inputBase =
-  "w-full rounded-2xl border border-sand-200 bg-white px-4 py-3 text-ink placeholder:text-ink-muted/70 shadow-sm transition-colors focus:border-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-200";
+  "w-full rounded-md border border-sand-200 bg-cream px-4 py-3 text-ink placeholder:text-ink-muted/70 transition-colors focus:border-sage-600 focus:outline-none focus:ring-2 focus:ring-sage-100";
 
 export default function ContactForm() {
   const params = useSearchParams();
@@ -48,7 +48,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="rounded-5xl border border-sand-200 bg-white/70 p-6 shadow-soft backdrop-blur-sm sm:p-10">
+    <div className="rounded-xl border border-sand-200 bg-white p-6 shadow-soft sm:p-10">
       <AnimatePresence mode="wait">
         {sent ? (
           <motion.div

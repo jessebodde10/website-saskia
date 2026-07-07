@@ -101,19 +101,13 @@ export default function GeneratieAlphaPage() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.15} y={32}>
-            <div className="relative">
-              <div
-                aria-hidden
-                className="blob absolute -inset-4 -z-10 bg-sage-100"
-              />
-              <ImageFrame
-                src={images.children}
-                alt="Kind dat geconcentreerd en speels bezig is"
-                aspect="aspect-[4/5]"
-                rounded="rounded-5xl"
-              />
-            </div>
+          <FadeIn delay={0.15} y={24}>
+            <ImageFrame
+              src={images.children}
+              alt="Kind dat geconcentreerd en speels bezig is"
+              aspect="aspect-[4/5]"
+              rounded="rounded-xl"
+            />
           </FadeIn>
         </div>
       </section>
@@ -134,7 +128,7 @@ export default function GeneratieAlphaPage() {
             {kenmerken.map((k) => (
               <StaggerItem key={k.title}>
                 <div className="card flex h-full gap-5">
-                  <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-terracotta-100 text-terracotta-500">
+                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-sage-50 text-sage-600">
                     <k.icon className="h-5 w-5" />
                   </span>
                   <div>
@@ -165,7 +159,7 @@ export default function GeneratieAlphaPage() {
           {vertaling.map((v) => (
             <StaggerItem key={v.title}>
               <div className="card h-full">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-sage-100 text-sage-600">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-sage-50 text-sage-600">
                   <Leaf className="h-5 w-5" />
                 </span>
                 <h3 className="mt-5 text-lg font-medium text-ink">{v.title}</h3>
@@ -177,40 +171,38 @@ export default function GeneratieAlphaPage() {
       </section>
 
       {/* Afsluitende CTA */}
-      <section className="container-content pb-20">
-        <FadeIn>
-          <div className="relative overflow-hidden rounded-5xl bg-sage-600 px-8 py-16 text-center text-cream shadow-card sm:px-16">
-            <div
-              aria-hidden
-              className="blob absolute -right-16 -top-16 h-64 w-64 bg-sage-400/50"
-            />
-            <div className="relative mx-auto max-w-2xl">
-              <h2 className="text-3xl text-cream sm:text-4xl">
+      <section className="container-content py-12 sm:py-16">
+        <div className="rounded-3xl bg-sage-600 px-8 py-14 text-cream sm:px-12 sm:py-16 lg:px-16">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-16">
+            <FadeIn>
+              <h2 className="text-3xl tracking-tightest text-cream sm:text-4xl">
                 Generatie Alpha als thema voor jouw team?
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-sand-100/90">
+              <p className="mt-4 max-w-lg leading-relaxed text-sand-100/85">
                 Ik kom graag langs om dit hoofdstuk interactief met je team te
                 verkennen, afgestemd op jullie praktijk in kinderopvang,
                 onderwijs of zorg.
               </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <div className="flex flex-wrap gap-3 lg:justify-end">
                 <Link
                   href="/contact?onderwerp=alpha"
-                  className="btn bg-cream text-ink hover:-translate-y-0.5 hover:bg-white"
+                  className="btn bg-cream text-ink hover:bg-white"
                 >
                   Vraag informatie aan
                   <ArrowRight />
                 </Link>
                 <Link
                   href="/generatie-op-de-werkvloer"
-                  className="btn border border-cream/40 text-cream hover:-translate-y-0.5 hover:bg-cream/10"
+                  className="btn border border-cream/30 text-cream hover:bg-cream/10"
                 >
                   Bekijk de training
                 </Link>
               </div>
-            </div>
+            </FadeIn>
           </div>
-        </FadeIn>
+        </div>
       </section>
     </>
   );

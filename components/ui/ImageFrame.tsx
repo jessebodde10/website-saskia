@@ -18,7 +18,7 @@ export default function ImageFrame({
   alt,
   className = "",
   priority = false,
-  rounded = "rounded-5xl",
+  rounded = "rounded-xl",
   aspect = "aspect-[4/5]",
 }: ImageFrameProps) {
   return (
@@ -31,7 +31,7 @@ export default function ImageFrame({
         sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"
       />
-      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-ink/5" />
+      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-ink/10" />
     </div>
   );
 }

@@ -8,65 +8,63 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Strak, zakelijk maar warm: koele greige basis, diep saliegroen, terracotta als accent
+        // Editorial & zakelijk: schoon wit, neutrale grijzen, één diepe groene accentkleur
         sand: {
-          50: "#F7F8F4",
-          100: "#EFF1EA",
-          200: "#E2E5DC",
-          300: "#CBD0C2",
-          400: "#AEB6A2",
+          50: "#F7F7F4",
+          100: "#EFEFEB",
+          200: "#E3E3DD", // hairline borders
+          300: "#CFCFC7",
+          400: "#A2A299",
         },
         sage: {
-          50: "#F1F4EE",
-          100: "#E1E7DC",
-          200: "#C4D0BB",
-          300: "#9FB093",
-          400: "#7E9070",
-          500: "#5F7256",
-          600: "#4A5B44",
-          700: "#374533",
+          50: "#EDF2EE",
+          100: "#D8E4DC",
+          200: "#B3C9BB",
+          300: "#83A791",
+          400: "#4F8064",
+          500: "#356049",
+          600: "#234C38", // primair accent
+          700: "#173829",
         },
+        // Spaarzaam gebruikt warm accent (klei), voor de enkele menselijke touch
         terracotta: {
-          50: "#F8EEE8",
-          100: "#EED7C9",
-          200: "#DEB699",
-          300: "#CB9573",
-          400: "#BC7E5A",
-          500: "#A5623C",
-          600: "#8A4F30",
-          700: "#6E3E26",
+          50: "#F7EEE8",
+          100: "#EAD7C8",
+          400: "#B87F5B",
+          500: "#9A5C34",
+          600: "#7E4826",
         },
         ink: {
-          DEFAULT: "#23261F",
-          soft: "#474C40",
-          muted: "#6A6F62",
+          DEFAULT: "#15150F",
+          soft: "#42423A",
+          muted: "#707066",
         },
-        cream: "#FBFBF9",
+        cream: "#FBFBFA",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
-        serif: ["var(--font-fraunces)", "ui-serif", "Georgia", "serif"],
+        // Editorial display: strak grotesk voor koppen en het woordmerk
+        display: [
+          "var(--font-display)",
+          "var(--font-inter)",
+          "ui-sans-serif",
+          "sans-serif",
+        ],
+      },
+      letterSpacing: {
+        tightest: "-0.04em",
       },
       borderRadius: {
-        "4xl": "1.5rem",
-        "5xl": "2rem",
+        "4xl": "0.75rem",
+        "5xl": "1rem",
       },
       maxWidth: {
-        content: "72rem",
+        content: "75rem",
         prose: "42rem",
       },
       boxShadow: {
-        soft: "0 10px 40px -15px rgba(58, 58, 52, 0.15)",
-        card: "0 20px 60px -25px rgba(58, 58, 52, 0.22)",
-      },
-      keyframes: {
-        "float-slow": {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-14px)" },
-        },
-      },
-      animation: {
-        "float-slow": "float-slow 9s ease-in-out infinite",
+        soft: "0 1px 2px rgba(21,21,15,0.04), 0 2px 6px -2px rgba(21,21,15,0.06)",
+        card: "0 6px 24px -10px rgba(21,21,15,0.12)",
       },
     },
   },

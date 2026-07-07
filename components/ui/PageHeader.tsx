@@ -8,29 +8,24 @@ type PageHeaderProps = {
 
 export default function PageHeader({ eyebrow, title, intro }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden pt-16 sm:pt-24">
-      {/* Zachte organische achtergrondvorm */}
-      <div
-        aria-hidden
-        className="blob absolute -right-24 -top-20 h-72 w-72 bg-sage-100/70 blur-2xl"
-      />
-      <div
-        aria-hidden
-        className="blob absolute -left-16 top-24 h-56 w-56 bg-terracotta-100/50 blur-2xl"
-      />
-      <div className="container-content relative">
-        <div className="max-w-prose">
-          {eyebrow && (
-            <FadeIn>
-              <p className="eyebrow">{eyebrow}</p>
+    <section className="border-b border-sand-200">
+      <div className="container-content py-16 sm:py-24">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div>
+            {eyebrow && (
+              <FadeIn>
+                <p className="eyebrow">{eyebrow}</p>
+              </FadeIn>
+            )}
+            <FadeIn delay={0.05}>
+              <h1 className="mt-5 text-4xl leading-[1.05] tracking-tightest sm:text-5xl lg:text-6xl">
+                {title}
+              </h1>
             </FadeIn>
-          )}
-          <FadeIn delay={0.05}>
-            <h1 className="mt-4 text-4xl leading-[1.1] sm:text-5xl">{title}</h1>
-          </FadeIn>
+          </div>
           {intro && (
             <FadeIn delay={0.12}>
-              <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-soft">
+              <div className="max-w-prose space-y-5 text-lg leading-relaxed text-ink-soft lg:pt-3">
                 {intro}
               </div>
             </FadeIn>

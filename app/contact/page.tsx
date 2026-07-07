@@ -25,7 +25,7 @@ const ctas = [
     text: "Een vrijblijvend gesprek om te voelen of het klikt.",
     href: "/contact?onderwerp=kennismaking#formulier",
     icon: Calendar,
-    accent: "terracotta" as const,
+    accent: "sage" as const,
   },
   {
     title: "Vraag informatie aan",
@@ -39,16 +39,12 @@ const ctas = [
 export default function ContactPage() {
   return (
     <>
-      <section className="relative overflow-hidden pt-16 sm:pt-24">
-        <div
-          aria-hidden
-          className="blob absolute -right-24 -top-16 h-72 w-72 bg-terracotta-100/50 blur-2xl"
-        />
-        <div className="container-content relative">
+      <section className="border-b border-sand-200 pt-16 sm:pt-24">
+        <div className="container-content pb-16 sm:pb-24">
           <div className="max-w-prose">
             <FadeIn>
               <p className="eyebrow">Contact</p>
-              <h1 className="mt-4 text-4xl leading-[1.1] sm:text-5xl">
+              <h1 className="mt-5 text-4xl leading-[1.05] tracking-tightest sm:text-5xl">
                 Neem contact op
               </h1>
             </FadeIn>
@@ -75,15 +71,9 @@ export default function ContactPage() {
             <StaggerItem key={cta.title}>
               <a
                 href={cta.href}
-                className="card group flex h-full flex-col bg-white/70"
+                className="card group flex h-full flex-col"
               >
-                <span
-                  className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${
-                    cta.accent === "sage"
-                      ? "bg-sage-100 text-sage-600"
-                      : "bg-terracotta-100 text-terracotta-500"
-                  }`}
-                >
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-sage-50 text-sage-600">
                   <cta.icon className="h-5 w-5" />
                 </span>
                 <h2 className="mt-5 text-xl font-medium">{cta.title}</h2>

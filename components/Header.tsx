@@ -51,9 +51,9 @@ export default function Header() {
           className="flex items-center gap-2.5 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
           aria-label="Rise & Connect, naar home"
         >
-          <Logo className="h-9 w-9 text-sage-500" />
-          <span className="font-serif text-lg font-medium tracking-tight text-ink">
-            Rise <span className="text-terracotta-400">&amp;</span> Connect
+          <Logo className="h-8 w-8 text-sage-600" />
+          <span className="font-display text-lg font-semibold tracking-tight text-ink">
+            Rise <span className="text-sage-600">&amp;</span> Connect
           </span>
         </Link>
 
@@ -62,7 +62,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`relative rounded-full px-4 py-2 text-sm transition-colors duration-200 ${
+              className={`relative px-3.5 py-2 text-sm transition-colors duration-200 ${
                 isActive(item.href)
                   ? "text-ink"
                   : "text-ink-soft hover:text-ink"
@@ -72,7 +72,7 @@ export default function Header() {
               {isActive(item.href) && (
                 <motion.span
                   layoutId="nav-active"
-                  className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-terracotta-400"
+                  className="absolute inset-x-3.5 -bottom-1 h-[2px] bg-sage-600"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -133,9 +133,9 @@ export default function Header() {
                         aria-current={active ? "page" : undefined}
                       >
                         <span
-                          className={`font-serif text-3xl tracking-tight transition-colors ${
+                          className={`font-display text-3xl font-medium tracking-tight transition-colors ${
                             active
-                              ? "text-terracotta-600"
+                              ? "text-sage-600"
                               : "text-ink group-hover:text-sage-600"
                           }`}
                         >
@@ -144,7 +144,7 @@ export default function Header() {
                         {active && (
                           <span
                             aria-hidden
-                            className="ml-auto h-2 w-2 self-center rounded-full bg-terracotta-500"
+                            className="ml-auto h-1.5 w-1.5 self-center rounded-full bg-sage-600"
                           />
                         )}
                       </Link>

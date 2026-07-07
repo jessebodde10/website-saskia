@@ -5,14 +5,14 @@
 @layer base {
   :root {
     --font-inter: "Inter", system-ui, sans-serif;
-    --font-fraunces: "Fraunces", Georgia, serif;
+    --font-display: "Space Grotesk", "Inter", sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  /* Respecteer voorkeur voor minder beweging (o.a. de zwevende hero-animatie) */
+  /* Respecteer voorkeur voor minder beweging */
   @media (prefers-reduced-motion: reduce) {
     *,
     ::before,
@@ -26,18 +26,18 @@
 
   body {
     @apply bg-cream text-ink antialiased;
-    font-feature-settings: "kern", "liga";
+    font-feature-settings: "kern", "liga", "cv11";
   }
 
   ::selection {
-    @apply bg-sage-200 text-ink;
+    @apply bg-sage-600 text-cream;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply font-serif tracking-tight text-ink;
+    @apply font-display font-medium tracking-tightest text-ink;
     text-wrap: balance;
   }
 
@@ -48,38 +48,50 @@
 
 @layer components {
   .container-content {
-    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-10;
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
   }
 
+  /* Editorial knoppen: rechthoekig, rustig, één accent */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium
-      transition-all duration-300 focus-visible:outline-none focus-visible:ring-2
-      focus-visible:ring-sage-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm
+      font-medium transition-all duration-200 focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2
+      focus-visible:ring-offset-cream;
   }
 
   .btn-primary {
-    @apply btn bg-sage-600 text-cream shadow-soft hover:bg-sage-700 hover:shadow-card
-      hover:-translate-y-0.5;
-  }
-
-  .btn-accent {
-    @apply btn bg-terracotta-600 text-cream shadow-soft hover:bg-terracotta-700
-      hover:shadow-card hover:-translate-y-0.5;
+    @apply btn bg-sage-600 text-cream hover:bg-sage-700;
   }
 
   .btn-outline {
-    @apply btn border border-sage-300 bg-transparent text-ink hover:border-sage-500
-      hover:bg-sage-50 hover:-translate-y-0.5;
+    @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink/40
+      hover:bg-sand-50;
   }
 
+  /* Behouden voor compatibiliteit; in editorial gelijk aan primary */
+  .btn-accent {
+    @apply btn-primary;
+  }
+
+  /* Klein, getrackt kopje boven een sectietitel */
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.22em] text-terracotta-500;
+    @apply inline-flex items-center gap-2.5 text-xs font-semibold uppercase
+      tracking-[0.18em] text-sage-600;
   }
 
+  .eyebrow::before {
+    @apply h-px w-6 bg-sage-600/50 content-[''];
+  }
+
+  /* Vlakke, redactionele kaart met haarlijn */
   .card {
-    @apply rounded-4xl border border-sand-200 bg-white p-8 shadow-soft
-      transition-all duration-300 hover:-translate-y-1 hover:border-sand-300
-      hover:shadow-card sm:p-10;
+    @apply rounded-xl border border-sand-200 bg-white p-8 shadow-soft
+      transition-colors duration-200 hover:border-sand-300 sm:p-10;
+  }
+
+  /* Dunne scheidslijn */
+  .rule {
+    @apply border-t border-sand-200;
   }
 }
 
@@ -88,8 +100,9 @@
     text-wrap: balance;
   }
 
-  /* Organische blob-vorm voor natuurlijke accenten */
-  .blob {
-    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  /* Onderstreepte tekstlink, editorial */
+  .link-underline {
+    @apply underline decoration-sand-300 decoration-1 underline-offset-4
+      transition-colors hover:decoration-sage-600;
   }
 }
