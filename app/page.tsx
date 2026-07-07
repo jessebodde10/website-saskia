@@ -194,7 +194,7 @@ export default function HomePage() {
             <FadeIn>
               <p className="eyebrow">Over mij</p>
               <h2 className="mt-5 text-3xl tracking-tightest sm:text-4xl">
-                Ik ben Saskia Bodde
+                Ik ben Saskia
               </h2>
             </FadeIn>
             <FadeIn delay={0.08}>
