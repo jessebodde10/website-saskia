@@ -18,34 +18,41 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#FBFBFA",
+          backgroundColor: "#F4F1E9",
           padding: "72px",
           fontFamily: "sans-serif",
         }}
       >
         {/* Merk */}
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <div style={{ display: "flex", alignItems: "flex-end", gap: 4 }}>
+            {[
+              { h: 22, c: "#6E7F8C" },
+              { h: 30, c: "#5E8A78" },
+              { h: 38, c: "#C6A15E" },
+              { h: 46, c: "#C07350" },
+              { h: 54, c: "#7E6E9E" },
+            ].map((b) => (
+              <div
+                key={b.h}
+                style={{
+                  width: 8,
+                  height: b.h,
+                  borderRadius: 3,
+                  backgroundColor: b.c,
+                }}
+              />
+            ))}
+          </div>
           <div
             style={{
-              width: 52,
-              height: 52,
-              borderRadius: 12,
-              backgroundColor: "#234C38",
-            }}
-          />
-          <div
-            style={{
-              display: "flex",
-              gap: 10,
               fontSize: 30,
               fontWeight: 600,
-              color: "#15150F",
+              color: "#1E2420",
               letterSpacing: -0.5,
             }}
           >
-            <span>Rise</span>
-            <span style={{ color: "#234C38" }}>&amp;</span>
-            <span>Connect</span>
+            Rise &amp; Connect
           </div>
         </div>
 
@@ -54,29 +61,35 @@ export default function OpengraphImage() {
           style={{
             display: "flex",
             flexDirection: "column",
-            fontSize: 64,
+            fontSize: 66,
             fontWeight: 600,
-            lineHeight: 1.06,
-            color: "#15150F",
-            letterSpacing: -2,
-            maxWidth: 920,
+            lineHeight: 1.02,
+            color: "#1E2420",
+            letterSpacing: -2.5,
+            maxWidth: 940,
           }}
         >
-          <span>Generaties op de werkvloer</span>
-          <span style={{ color: "#234C38" }}>& Generatie Alpha</span>
-          <span>in de praktijk</span>
+          <span>Generaties op de werkvloer,</span>
+          <span>van babyboomer tot Alpha</span>
         </div>
 
-        {/* Onderregel */}
-        <div
-          style={{
-            fontSize: 22,
-            color: "#707066",
-            letterSpacing: 3,
-            textTransform: "uppercase",
-          }}
-        >
-          Kinderopvang · Onderwijs · Zorg · Teams
+        {/* Spectrum + onderregel */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+          <div style={{ display: "flex", height: 10, borderRadius: 5, overflow: "hidden" }}>
+            {["#6E7F8C", "#5E8A78", "#C6A15E", "#C07350", "#7E6E9E"].map((c) => (
+              <div key={c} style={{ flex: 1, backgroundColor: c }} />
+            ))}
+          </div>
+          <div
+            style={{
+              fontSize: 21,
+              color: "#6E7368",
+              letterSpacing: 3,
+              textTransform: "uppercase",
+            }}
+          >
+            Kinderopvang · Onderwijs · Zorg · Teams
+          </div>
         </div>
       </div>
     ),

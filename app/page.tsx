@@ -2,6 +2,7 @@ import Link from "next/link";
 import FadeIn from "@/components/motion/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
 import ImageFrame from "@/components/ui/ImageFrame";
+import Spectrum from "@/components/ui/Spectrum";
 import { images } from "@/lib/images";
 import { ArrowRight, Check } from "@/components/icons";
 
@@ -16,14 +17,14 @@ const audiences = [
 
 const themes = [
   {
-    no: "01",
+    label: "De training",
     title: "Generatie op de werkvloer",
     text: "Een interactieve training over de verschillende generaties in een team. Medewerkers ontdekken hoe generaties verschillen in communicatie, samenwerken, feedback en werkhouding, en hoe je die verschillen benut.",
     href: "/generatie-op-de-werkvloer",
     cta: "Bekijk de training",
   },
   {
-    no: "02",
+    label: "Het hoofdstuk",
     title: "Generatie Alpha in de praktijk",
     text: "De eerste volledig digitale generatie zit nu op de groep en in de klas. In dit hoofdstuk vertaal ik wat Generatie Alpha kenmerkt naar jouw dagelijkse praktijk in kinderopvang, onderwijs en zorg.",
     href: "/generatie-alpha",
@@ -33,17 +34,14 @@ const themes = [
 
 const values = [
   {
-    no: "01",
     title: "Meer begrip",
     text: "Verschillen tussen generaties worden zichtbaar en bespreekbaar, als bron van begrip in plaats van wrijving.",
   },
   {
-    no: "02",
     title: "Betere samenwerking",
     text: "Teams die elkaars gedrag en verwachtingen snappen, werken soepeler en met meer plezier samen.",
   },
   {
-    no: "03",
     title: "Klaar voor de toekomst",
     text: "Van babyboomer tot Generatie Alpha: inzicht in wie er straks op de werkvloer staat en op de groep zit.",
   },
@@ -54,18 +52,18 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="border-b border-sand-200">
-        <div className="container-content grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16 lg:py-24">
+        <div className="container-content grid gap-12 pt-16 sm:pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16 lg:pt-24">
           <div>
             <FadeIn>
               <p className="eyebrow">Training voor teams</p>
             </FadeIn>
             <FadeIn delay={0.06}>
-              <h1 className="mt-6 text-5xl leading-[1.02] tracking-tightest sm:text-6xl">
-                Generaties op de werkvloer, van babyboomer tot Alpha
+              <h1 className="mt-5 text-5xl leading-[0.98] tracking-tightest sm:text-6xl">
+                Generaties op de werkvloer
               </h1>
             </FadeIn>
             <FadeIn delay={0.14}>
-              <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
                 Ik help teams in kinderopvang, onderwijs en zorg om de
                 verschillen tussen generaties te begrijpen en die om te zetten
                 in betere samenwerking. Praktisch, interactief en direct
@@ -73,7 +71,7 @@ export default function HomePage() {
               </p>
             </FadeIn>
             <FadeIn delay={0.22}>
-              <div className="mt-9 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link href="/generatie-op-de-werkvloer" className="btn-primary">
                   Bekijk de training
                   <ArrowRight />
@@ -95,14 +93,19 @@ export default function HomePage() {
             />
           </FadeIn>
         </div>
+
+        {/* Signatuur: het generatiespectrum */}
+        <FadeIn delay={0.1}>
+          <div className="container-content py-12 sm:py-16">
+            <Spectrum />
+          </div>
+        </FadeIn>
       </section>
 
       {/* Doelgroepen strip */}
       <div className="border-b border-sand-200">
         <div className="container-content flex flex-wrap items-center gap-x-2 gap-y-2 py-5 text-sm text-ink-muted">
-          <span className="mr-2 font-medium uppercase tracking-[0.14em] text-ink-soft">
-            Voor
-          </span>
+          <span className="eyebrow mr-2">Voor</span>
           {audiences.map((a, i) => (
             <span key={a} className="flex items-center gap-2">
               {i > 0 && <span className="text-sand-300">·</span>}
@@ -116,16 +119,16 @@ export default function HomePage() {
       <section className="container-content py-20 sm:py-28">
         <div className="grid divide-y divide-sand-200 border-y border-sand-200 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
           {themes.map((t, i) => (
-            <FadeIn key={t.no} className="h-full">
+            <FadeIn key={t.label} className="h-full">
               <article
                 className={`group flex h-full flex-col py-10 lg:py-4 ${
                   i === 0 ? "lg:pr-14" : "lg:pl-14"
                 }`}
               >
-                <span className="font-display text-sm font-medium text-sage-600">
-                  {t.no}
-                </span>
-                <h2 className="mt-4 text-2xl sm:text-3xl">{t.title}</h2>
+                <span className="eyebrow">{t.label}</span>
+                <h2 className="mt-4 text-2xl tracking-tightest sm:text-3xl">
+                  {t.title}
+                </h2>
                 <p className="mt-4 flex-1 leading-relaxed text-ink-soft">
                   {t.text}
                 </p>
@@ -158,13 +161,8 @@ export default function HomePage() {
             </FadeIn>
             <StaggerGroup className="grid gap-px overflow-hidden rounded-xl border border-sand-200 bg-sand-200 sm:grid-cols-3">
               {values.map((v) => (
-                <StaggerItem key={v.no} className="bg-cream p-7">
-                  <span className="font-display text-sm font-medium text-sage-600">
-                    {v.no}
-                  </span>
-                  <h3 className="mt-4 text-lg font-medium text-ink">
-                    {v.title}
-                  </h3>
+                <StaggerItem key={v.title} className="bg-cream p-7">
+                  <h3 className="text-lg font-semibold text-ink">{v.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                     {v.text}
                   </p>
@@ -242,7 +240,7 @@ export default function HomePage() {
               <h2 className="text-3xl tracking-tightest text-cream sm:text-4xl">
                 Benieuwd wat dit voor jouw team betekent?
               </h2>
-              <p className="mt-4 max-w-lg leading-relaxed text-sand-100/85">
+              <p className="mt-4 max-w-lg leading-relaxed text-sand-100/80">
                 Neem gerust contact op. Dan kijken we samen naar wat aansluit bij
                 jouw vraag of organisatie.
               </p>

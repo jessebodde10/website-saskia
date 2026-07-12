@@ -1,20 +1,30 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Hanken_Grotesk, Bricolage_Grotesque, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
+// Body: warme, humanistische sans
+const sans = Hanken_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "swap",
 });
 
-const display = Space_Grotesk({
+// Display: karaktervolle grotesk, met terughoudendheid ingezet
+const display = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "600", "800"],
   variable: "--font-display",
+  display: "swap",
+});
+
+// Utility: mono voor labels en jaartallen (data)
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -91,7 +101,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nl" className={`${inter.variable} ${display.variable}`}>
+    <html
+      lang="nl"
+      className={`${sans.variable} ${display.variable} ${mono.variable}`}
+    >
       <body>
         <script
           type="application/ld+json"

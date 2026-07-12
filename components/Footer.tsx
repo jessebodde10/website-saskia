@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navItems, contactEmail } from "@/lib/nav";
+import { generations } from "@/lib/generations";
 import Logo from "@/components/Logo";
 import { Mail } from "@/components/icons";
 
@@ -13,6 +14,12 @@ export default function Footer() {
 
   return (
     <footer className="mt-24 bg-ink text-cream">
+      {/* Spectrum-accent: het merkelement keert terug als dunne lijn */}
+      <div aria-hidden className="flex h-1">
+        {generations.map((g) => (
+          <span key={g.key} className={`flex-1 ${g.tint}`} />
+        ))}
+      </div>
       <div className="container-content grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
         <div className="lg:col-span-2">
           <div className="flex items-center gap-2.5">

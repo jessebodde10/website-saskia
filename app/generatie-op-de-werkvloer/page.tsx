@@ -4,7 +4,9 @@ import FadeIn from "@/components/motion/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
 import PageHeader from "@/components/ui/PageHeader";
 import ImageFrame from "@/components/ui/ImageFrame";
+import Spectrum from "@/components/ui/Spectrum";
 import { images } from "@/lib/images";
+import { generations } from "@/lib/generations";
 import { ArrowRight, Users, Clock, Check } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -18,29 +20,6 @@ const praktisch = [
   { label: "Vorm", value: "Interactieve basistraining" },
   { label: "Duur", value: "Ongeveer 90 minuten" },
   { label: "Vervolg mogelijk", value: "Verdieping op teamvragen" },
-];
-
-const generaties = [
-  {
-    naam: "Babyboomers",
-    jaren: "1946 – 1964",
-    kern: "Loyaal, ervaren en gericht op stabiliteit en vakmanschap.",
-  },
-  {
-    naam: "Generatie X",
-    jaren: "1965 – 1980",
-    kern: "Zelfstandig en nuchter, zoekt balans tussen werk en privé.",
-  },
-  {
-    naam: "Generatie Y (millennials)",
-    jaren: "1981 – 1996",
-    kern: "Betekenisgericht, flexibel en gewend aan continue feedback.",
-  },
-  {
-    naam: "Generatie Z",
-    jaren: "1997 – 2010",
-    kern: "Digitaal opgegroeid, direct en gericht op authenticiteit en welzijn.",
-  },
 ];
 
 export default function GeneratieWerkvloerPage() {
@@ -140,14 +119,14 @@ export default function GeneratieWerkvloerPage() {
         </div>
       </section>
 
-      {/* Generaties in het kort */}
+      {/* Generaties in het kort — gekoppeld aan het spectrum */}
       <section className="border-y border-sand-200 bg-sand-50 py-20 sm:py-28">
         <div className="container-content">
           <FadeIn>
             <div className="max-w-prose">
               <p className="eyebrow">In het kort</p>
               <h2 className="mt-5 text-3xl tracking-tightest sm:text-4xl">
-                Vier generaties, één team
+                Vijf generaties, één team
               </h2>
               <p className="mt-4 leading-relaxed text-ink-soft">
                 Een globale schets, geen hokjes maar handvatten. In de training
@@ -156,13 +135,21 @@ export default function GeneratieWerkvloerPage() {
             </div>
           </FadeIn>
 
-          <StaggerGroup className="mt-10 grid gap-6 sm:grid-cols-2">
-            {generaties.map((g) => (
-              <StaggerItem key={g.naam}>
+          <FadeIn delay={0.05}>
+            <Spectrum className="mt-10" labels={false} />
+          </FadeIn>
+
+          <StaggerGroup className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {generations.map((g) => (
+              <StaggerItem key={g.key}>
                 <div className="card h-full">
-                  <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="text-lg font-medium text-ink">{g.naam}</h3>
-                    <span className="text-sm tabular-nums text-sage-600">
+                  <span
+                    aria-hidden
+                    className={`block h-1 w-10 rounded-full ${g.tint}`}
+                  />
+                  <div className="mt-4 flex items-baseline justify-between gap-4">
+                    <h3 className="text-lg font-semibold text-ink">{g.naam}</h3>
+                    <span className="font-mono text-xs text-ink-muted">
                       {g.jaren}
                     </span>
                   </div>

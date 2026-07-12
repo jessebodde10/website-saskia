@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-inter: "Inter", system-ui, sans-serif;
-    --font-display: "Space Grotesk", "Inter", sans-serif;
-  }
-
   html {
     scroll-behavior: smooth;
   }
@@ -25,8 +20,8 @@
   }
 
   body {
-    @apply bg-cream text-ink antialiased;
-    font-feature-settings: "kern", "liga", "cv11";
+    @apply bg-cream font-sans text-ink antialiased;
+    font-feature-settings: "kern", "liga";
   }
 
   ::selection {
@@ -37,7 +32,7 @@
   h2,
   h3,
   h4 {
-    @apply font-display font-medium tracking-tightest text-ink;
+    @apply font-display font-semibold tracking-tightest text-ink;
     text-wrap: balance;
   }
 
@@ -51,9 +46,9 @@
     @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
   }
 
-  /* Editorial knoppen: rechthoekig, rustig, één accent */
+  /* Knoppen: rustig, rechthoekig, één teal accent */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm
       font-medium transition-all duration-200 focus-visible:outline-none
       focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2
       focus-visible:ring-offset-cream;
@@ -65,31 +60,29 @@
 
   .btn-outline {
     @apply btn border border-ink/25 bg-transparent text-ink hover:border-ink/60
-      hover:bg-sand-50;
+      hover:bg-sand-100;
   }
 
-  /* Behouden voor compatibiliteit; in editorial gelijk aan primary */
   .btn-accent {
     @apply btn-primary;
   }
 
-  /* Klein, getrackt kopje boven een sectietitel */
+  /* Eyebrow: mono label — data-achtig, past bij het spectrum */
   .eyebrow {
-    @apply inline-flex items-center gap-2.5 text-xs font-semibold uppercase
-      tracking-[0.18em] text-sage-600;
+    @apply font-mono text-xs uppercase tracking-[0.14em] text-sage-600;
   }
 
-  .eyebrow::before {
-    @apply h-px w-6 bg-sage-600/50 content-[''];
+  /* Mono utility-label (jaartallen, kleine kapitalen) */
+  .label-mono {
+    @apply font-mono text-[0.7rem] uppercase tracking-[0.12em] text-ink-muted;
   }
 
-  /* Vlakke, redactionele kaart met haarlijn */
+  /* Vlakke, warme kaart met haarlijn */
   .card {
     @apply rounded-xl border border-sand-200 bg-white p-8 shadow-soft
       transition-colors duration-200 hover:border-sand-300 sm:p-10;
   }
 
-  /* Dunne scheidslijn */
   .rule {
     @apply border-t border-sand-200;
   }
@@ -100,7 +93,6 @@
     text-wrap: balance;
   }
 
-  /* Onderstreepte tekstlink, editorial */
   .link-underline {
     @apply underline decoration-sand-300 decoration-1 underline-offset-4
       transition-colors hover:decoration-sage-600;
